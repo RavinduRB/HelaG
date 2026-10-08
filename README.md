@@ -209,24 +209,6 @@ Use `npm run preview` for a local production preview. In production, serve the b
 
 The service worker and install prompt require `localhost` or HTTPS. Opening `index.html` directly from the file system does not enable PWA installation or service-worker behavior.
 
-### AWS deployment with a container
-
-The included `Dockerfile` builds the React frontend and runs it from the same Express service as the API. This is suitable for AWS App Runner, ECS, or a small EC2 deployment.
-
-1. Create a MongoDB Atlas production database and allow the AWS service to connect to it.
-2. Build and test the container locally:
-
-   ```bash
-   docker build -t helag .
-   docker run --env-file .env -p 4000:4000 helag
-   ```
-
-3. Push the image to Amazon ECR, then deploy it to App Runner or ECS.
-4. Configure these environment variables in AWS: `MONGODB_URI`, `MONGODB_DB`, `SESSION_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `CLIENT_ORIGIN`, and `NODE_ENV=production`.
-5. Set `CLIENT_ORIGIN` to the final HTTPS application URL and use the platform-provided `PORT` value.
-
-The production container serves the frontend and API from one origin, so browser sessions and `/api` requests continue to work without a separate frontend proxy.
-
 ## 📡 Offline behavior and limitations
 
 - Cached listings can be viewed when the API or network is unavailable.

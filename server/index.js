@@ -5,19 +5,14 @@ import express from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import { imageSize } from "image-size";
-import path from "node:path";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import mongoose from "mongoose";
-import { fileURLToPath } from "node:url";
 import Admin from "./models/Admin.js";
 import Business from "./models/Business.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
-const currentFile = fileURLToPath(import.meta.url);
-const serverDirectory = path.dirname(currentFile);
-const clientDirectory = path.resolve(serverDirectory, "../dist");
 
 if (!process.env.SESSION_SECRET) throw new Error("SESSION_SECRET is missing. Add a long random secret to .env.");
 if (!process.env.ADMIN_PASSWORD) throw new Error("ADMIN_PASSWORD is missing. Add the initial administrator password to .env.");
@@ -26,10 +21,7 @@ app.set("trust proxy", 1);
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", credentials: true }));
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use((request, response, next) => {
-  response.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://router.project-osrm.org https://*.tile.openstreetmap.org; font-src 'self' data:; worker-src 'self'",
-  );
+  response.setHeader("Content-Security-Policy", "default-src 'none'; frame-ancestors 'none';");
   next();
 });
 app.use(express.json({ limit: "10mb" }));
@@ -296,15 +288,6 @@ app.delete("/api/businesses/:id", requireAdmin, async (request, response) => {
       .json({ message: "Could not delete business." });
   }
 });
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(clientDirectory));
-  app.use((request, response, next) => {
-    if (request.method === "GET" && !request.path.startsWith("/api/"))
-      return response.sendFile(path.join(clientDirectory, "index.html"));
-    next();
-  });
-}
 
 const start = async () => {
   if (!process.env.MONGODB_URI)
