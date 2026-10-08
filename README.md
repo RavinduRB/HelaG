@@ -1,12 +1,24 @@
-# HelaG
+<div align="center">
+   <img src="https://raw.githubusercontent.com/RavinduRB/HelaG/main/public/helag-logo-192.png" alt="HelaG logo" width="120" />
+
+   # HelaG
+
+   **Local goods, closer to you.**
+
+   Discover fresh produce and small businesses across Sri Lanka, then connect directly with the people behind every listing.
+
+   [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=20232A)](https://react.dev/) [![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/) [![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8?logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/) [![Sri Lanka](https://img.shields.io/badge/made_for-Sri_Lanka-009B77)](https://github.com/RavinduRB/HelaG)
+</div>
+
+<br />
 
 HelaG is a Progressive Web App that helps buyers discover fresh produce and small businesses across Sri Lanka. Local coordinators collect seller information through phone calls or SMS, verify it, and publish listings to the buyer map. Buyers contact sellers directly by phone or SMS to arrange orders, payment, pickup, or delivery.
 
 HelaG does not process payments or require farmers and small businesses to register themselves online.
 
-## Features
+## 🌱 Features
 
-### Buyer experience
+### 🛒 Buyer experience
 
 - Interactive OpenStreetMap map of Sri Lanka
 - Search by business name, product, or town
@@ -21,7 +33,7 @@ HelaG does not process payments or require farmers and small businesses to regis
 - About, FAQ, and Contact pages
 - English, Sinhala, and Tamil buyer content
 
-### Administrator workspace
+### 🧭 Administrator workspace
 
 - Server-side administrator login with bcrypt password hashing
 - HTTP-only, MongoDB-backed sessions
@@ -39,7 +51,7 @@ HelaG does not process payments or require farmers and small businesses to regis
 - Confirmation before deleting listings
 - Offline create and edit queue with automatic synchronization after connectivity returns
 
-### Offline and installable PWA
+### 📱 Offline and installable PWA
 
 - Installable on supported Android and iOS browsers
 - Cached application shell and static assets
@@ -48,9 +60,9 @@ HelaG does not process payments or require farmers and small businesses to regis
 - In-app install prompt when supported by the browser
 - Web App Manifest with HelaG icons and mobile metadata
 
-## Technology
+## ⚙️ Technology
 
-### Frontend
+### 🎨 Frontend
 
 - React 19 and React DOM
 - Vite
@@ -61,7 +73,7 @@ HelaG does not process payments or require farmers and small businesses to regis
 - Browser Geolocation, File, Canvas, and PWA APIs
 - Service Worker and Web App Manifest
 
-### Backend
+### 🛡️ Backend
 
 - Node.js and Express
 - MongoDB Atlas with Mongoose
@@ -74,7 +86,7 @@ HelaG does not process payments or require farmers and small businesses to regis
 - `image-size` for uploaded-image dimension validation
 - `exifr` for reading optional image GPS metadata in the frontend
 
-## Project structure
+## 🗂️ Project structure
 
 ```text
 .
@@ -104,14 +116,14 @@ HelaG does not process payments or require farmers and small businesses to regis
 └── vite.config.js
 ```
 
-## Requirements
+## ✅ Requirements
 
 - Node.js 20 or newer recommended
 - npm
 - MongoDB Atlas account and cluster
 - A modern browser with JavaScript, geolocation, and PWA support
 
-## Setup
+## 🚀 Setup
 
 1. Install dependencies:
 
@@ -137,7 +149,7 @@ HelaG does not process payments or require farmers and small businesses to regis
 
 4. In MongoDB Atlas, allow the development machine's IP address under **Network Access**.
 
-## Run locally
+## 💻 Run locally
 
 Start the API in one terminal:
 
@@ -155,7 +167,7 @@ Open <http://localhost:5173>. Vite proxies `/api` requests to `http://localhost:
 
 When the database has no businesses, the API seeds four sample listings. The first startup creates the administrator configured by `ADMIN_USERNAME` and `ADMIN_PASSWORD`; existing administrators are not overwritten.
 
-## Available scripts
+## 📜 Available scripts
 
 | Command | Purpose |
 | --- | --- |
@@ -165,7 +177,7 @@ When the database has no businesses, the API seeds four sample listings. The fir
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run Oxlint |
 
-## API endpoints
+## 🔌 API endpoints
 
 | Method | Endpoint | Authentication | Purpose |
 | --- | --- | --- | --- |
@@ -179,13 +191,13 @@ When the database has no businesses, the API seeds four sample listings. The fir
 | `DELETE` | `/api/businesses/:id` | Administrator | Delete a listing |
 | `POST` | `/api/businesses/:id/ratings` | Public | Add a whole-number rating from 1 to 5 |
 
-## Listing and image rules
+## 🖼️ Listing and image rules
 
 Each listing requires a name, location, category, product, price, quantity, phone number, initials, and valid `[latitude, longitude]` coordinates. Categories are limited to Vegetables, Fruits, Grains, and Spices.
 
 Uploaded images must be JPEG, PNG, or WebP files smaller than 5 MB, with dimensions between 100px and 4096px. The frontend may compress larger images to WebP before submission. Images can also be supplied as HTTPS URLs.
 
-## Production and deployment
+## ☁️ Production and deployment
 
 Build the frontend with:
 
@@ -197,7 +209,7 @@ Use `npm run preview` for a local production preview. In production, serve the b
 
 The service worker and install prompt require `localhost` or HTTPS. Opening `index.html` directly from the file system does not enable PWA installation or service-worker behavior.
 
-## Offline behavior and limitations
+## 📡 Offline behavior and limitations
 
 - Cached listings can be viewed when the API or network is unavailable.
 - Authentication session endpoints are never cached by the service worker.
@@ -207,7 +219,7 @@ The service worker and install prompt require `localhost` or HTTPS. Opening `ind
 - Image data is currently stored with listings. For larger production deployments, use object storage such as Cloudinary or Amazon S3.
 - MongoDB Atlas must be reachable for administrator login and server synchronization.
 
-## Security notes
+## 🔒 Security notes
 
 Administrator passwords are stored as bcrypt hashes and are never returned to the browser. Authentication uses a server-side session stored in MongoDB and an HTTP-only, same-site cookie.
 
