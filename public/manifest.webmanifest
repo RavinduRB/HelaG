@@ -1,0 +1,26 @@
+{
+  "name": "HelaG",
+  "short_name": "HelaG",
+  "description": "Discover local produce and small businesses across Sri Lanka.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbfcf8",
+  "theme_color": "#2f6747",
+  "icons": [
+    {
+      "src": "/helag-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/helag-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

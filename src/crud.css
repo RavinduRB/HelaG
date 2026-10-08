@@ -1,0 +1,294 @@
+.listing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.edit-listing {
+  border: 0;
+  padding: 0;
+  color: var(--green);
+  background: transparent;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.edit-listing:hover {
+  color: var(--ink);
+}
+
+.route-summary {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.leaflet-popup-content small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.field-hint {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.image-upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.camera-upload-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #adc2ae;
+  border-radius: 4px;
+  padding: 7px 10px;
+  background: #eff6e5;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.camera-upload-button:hover {
+  background: #e1edca;
+}
+
+.camera-upload-button svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.form-grid .camera-upload-input {
+  position: absolute;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  grid-column: 1 / -1;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: #f7faf3;
+  border-radius: 4px;
+}
+
+.image-preview img {
+  width: 72px;
+  height: 54px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.image-preview button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #ad6858;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.site-footer .footer-brand {
+  color: #f3f7ed;
+}
+
+.site-footer .footer-brand > span:last-child > span {
+  color: #d1e394;
+}
+
+.site-footer .footer-brand .brand-mark {
+  color: #244c39;
+  background: #d1e394;
+}
+
+.site-footer .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+.install-button {
+  border: 1px solid #adc2ae;
+  border-radius: 4px;
+  padding: 8px 11px;
+  background: #eff6e5;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.install-button:hover {
+  background: #e1edca;
+}
+
+.language-select {
+  border: 1px solid #c7d7c7;
+  border-radius: 4px;
+  padding: 7px 22px 7px 8px;
+  background: #fbfcf8;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.brand-logo {
+  width: 65px;
+  height: 65px;
+  flex: 0 0 65px;
+  object-fit: contain;
+}
+
+.login-card .login-mark {
+  width: 76px;
+  height: 76px;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 22px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-card {
+  text-align: center;
+}
+
+.login-card label {
+  text-align: left;
+}
+
+.top-actions {
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.language-select {
+  min-width: 82px;
+  max-width: 110px;
+  white-space: nowrap;
+}
+
+.hero-text,
+.detail-content,
+.contact-block,
+.footer-column,
+.footer-intro {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    gap: 14px;
+  }
+
+  .main-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 12px;
+    margin-left: 0;
+  }
+
+  .main-nav button {
+    white-space: nowrap;
+  }
+
+  .top-actions {
+    gap: 7px;
+  }
+
+  .admin-button,
+  .install-button {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar {
+    align-items: center;
+    gap: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .brand {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+    flex-basis: 45px;
+  }
+
+  .top-actions {
+    flex: 0 0 auto;
+    gap: 5px;
+  }
+
+  .language-select {
+    min-width: 58px;
+    width: 58px;
+    padding-left: 5px;
+    padding-right: 3px;
+    font-size: 9px;
+  }
+
+  .admin-button {
+    max-width: 100px;
+    overflow: hidden;
+    padding: 8px 9px;
+    white-space: nowrap;
+  }
+
+  .admin-button .admin-icon {
+    margin-right: 0;
+  }
+
+  .admin-button.selected {
+    max-width: 105px;
+  }
+
+  h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .category-tabs {
+    padding-bottom: 2px;
+  }
+
+  .category-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .map-footer-actions {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 6px;
+    text-align: right;
+  }
+
+  .footer-column a,
+  .footer-column button,
+  .footer-column span {
+    overflow-wrap: anywhere;
+  }
+}
