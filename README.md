@@ -11,6 +11,8 @@
 </div>
 
 <br />
+<img width="1640" height="924" alt="HelaG_post" src="https://github.com/user-attachments/assets/6d1a21c2-f209-4f77-92fc-7b0301cb6a75" />
+<br><br>
 
 HelaG is a Progressive Web App that helps buyers discover fresh produce and small businesses across Sri Lanka. Local coordinators collect seller information through phone calls or SMS, verify it, and publish listings to the buyer map. Buyers contact sellers directly by phone or SMS to arrange orders, payment, pickup, or delivery.
 
